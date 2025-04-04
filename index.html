@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Compare Office Files</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .file-select {
+      margin-bottom: 10px;
+    }
+
+    .diff-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .diff-box {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 10px;
+      white-space: pre-wrap;
+      background: #f9f9f9;
+      overflow-x: auto;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Compare .docx / .xlsx / .pptx Files</h2>
+
+  <div class="file-select">
+    <label>Select File 1:
+      <input type="file" id="file1" accept=".docx,.xlsx,.pptx">
+    </label>
+  </div>
+  <div class="file-select">
+    <label>Select File 2:
+      <input type="file" id="file2" accept=".docx,.xlsx,.pptx">
+    </label>
+  </div>
+
+  <div>
+    <label><strong>Common internal XML files:</strong></label><br>
+    <select id="entrySelector">
+      <option value="">-- Select a file part --</option>
+    </select>
+  </div>
+
+  <div class="diff-container">
+    <div class="diff-box" id="content1"><strong>File 1 Content</strong><br></div>
+    <div class="diff-box" id="content2"><strong>File 2 Content</strong><br></div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
